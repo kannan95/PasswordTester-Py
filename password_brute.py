@@ -35,9 +35,6 @@ class password_brute_class(threading.Thread):
             time_taken = end_time - start_time
             global guess_count
             guess_count = self.count
-            # return time_taken
-            # print("the password took {:5f} to bruteforce".format(end_time-start_clock))
-            # print("It took {0} guesses".format(self.count))
 
 
 def main(length, user_passwd):
