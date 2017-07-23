@@ -13,11 +13,6 @@ class dashboard(QMainWindow, Ui_PassWordTester):
     def __init__(self, parent=None):
         super().__init__()
         self.setupUi(self)
-        # self.icon = QIcon()
-        # self.icon.addPixmap(
-        #     QPixmap('/home/kannan/Desktop/Programs/Py/Brute/password'))
-        # self.setWindowIcon(self.icon)
-
         self.pushButton.clicked.connect(self.get_input)
 
     def get_input(self):
@@ -26,15 +21,12 @@ class dashboard(QMainWindow, Ui_PassWordTester):
             self.user_passwd = list(self.lineEdit.text())
             self.user_passwd_check = self.lineEdit.text()
             if not self.user_passwd:
-                # self.label_3.clear()
                 self.error_dialog = QtWidgets.QErrorMessage()
                 self.error_dialog.showMessage('Please give some input!!')
             elif not re.search('^[a-z]+$', self.user_passwd_check):
-                # self.label_3.clear()
                 self.error_dialog_2 = QtWidgets.QErrorMessage()
                 self.error_dialog_2.showMessage(
                     'Please enter lower case character only!')
-                # self.label_3.clear()
             self.length = len(self.user_passwd)
             self.time_taken, self.count = main(self.length, self.user_passwd)
             self.label_3.setAlignment(Qt.AlignCenter)
